@@ -111,3 +111,7 @@
   list-style-type: none;
   padding: 3px 0px;
 }
+
+.breadcrumb-item+.breadcrumb-item::before {
+  display: none;
+}
