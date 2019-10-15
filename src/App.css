@@ -23,11 +23,11 @@
   border: 1px solid #ccc;
 }
 
-.breadcrumb-custom-item {
+.breadcrumb-arrow {
   position: relative;
 }
 
-.breadcrumb-custom-item a {
+.breadcrumb-arrow a {
   text-decoration: none;
   outline: none;
 }

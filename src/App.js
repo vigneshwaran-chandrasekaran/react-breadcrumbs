@@ -1,31 +1,27 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useRef } from 'react';
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { func } from 'prop-types';
 
 function Arrow({ data }) {
-  console.log({ data });
-  const [popup, togglePopup] = useState(false);
+  const arrowBox = useRef();
 
   function hideOtherPopups() {
-    const elems = document.querySelectorAll(".breadcrumb-custom-item .arrow-box.show");
-    console.log({ elems });
-    [].forEach.call(elems, function (el) {
+    const elems = document.querySelectorAll(".breadcrumb-arrow .arrow-box.show");
+    for (const el of elems) {
       el.classList.remove("show");
-    });
+    }
   }
 
   function handleClick() {
     hideOtherPopups();
-    console.log('object');
-    togglePopup(!popup);
+    arrowBox.current.classList.add("show");
   }
 
   return (
     <>
       <span className="arrow" onClick={handleClick}>&gt;</span>
-      <div className={popup ? "arrow-box show" : "arrow-box"}>
+      <div className="arrow-box" ref={arrowBox}>
         <ol className='popup-links'>
           {data.map(({ id, name }) => (
             <li key={id}>
@@ -63,7 +59,7 @@ function App() {
         <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
         {links.map(({ id, name }, i) => (
           <Fragment key={id}>
-            <li className='breadcrumb-custom-item'>
+            <li className='breadcrumb-arrow'>
               <Arrow data={links.slice(i, links.length)} />
             </li>
             <Breadcrumb.Item title={name} href="/">
