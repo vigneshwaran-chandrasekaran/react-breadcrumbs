@@ -1,0 +1,113 @@
+.c-breadcrumb ol {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.c-breadcrumb ol li.active {
+  color: blue;
+}
+
+.arrow {
+  padding: 0 10px;
+  cursor: pointer;
+  color: blue;
+}
+
+.arrow:hover {
+  color: black;
+}
+
+.breadcrumb {
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+
+.breadcrumb-custom-item {
+  position: relative;
+}
+
+.breadcrumb-custom-item a {
+  text-decoration: none;
+  outline: none;
+}
+
+/* notes */
+
+.arrow-box {
+  display: none;
+  position: absolute;
+  background: #fff;
+  border: 1px solid #ccc;
+  margin-top: 40px;
+  width: 280px;
+  height: auto;
+  min-height: 50px;
+  border-radius: 0 0 5px 5px;
+  left: -28px;
+  z-index: 1;
+  padding: 10px;
+}
+
+.arrow-box:after,
+.arrow-box:before {
+  position: absolute;
+  bottom: 100%;
+  left: 20%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}
+
+.arrow-box:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #fff;
+  border-width: 18px;
+  margin-left: -33px;
+}
+
+.arrow-box:before {
+  border-color: rgba(204, 204, 204, 0);
+  border-bottom-color: #ccc;
+  border-width: 20px;
+  margin-left: -35px;
+}
+
+/* Toggle this class - hide and show the popup */
+.arrow-box.show {
+  -webkit-animation: fadeIn 0.5s;
+  animation: fadeIn 0.5s;
+  display: inline-block;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.popup-links {
+  padding: 0;
+}
+
+.popup-links li {
+  list-style-type: none;
+  padding: 3px 0px;
+}
