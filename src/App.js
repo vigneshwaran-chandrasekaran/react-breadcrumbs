@@ -7,30 +7,31 @@ import ArrowPopup from './ArrowPopup';
 const links = [
   {
     id: 1,
-    name: 'one'
+    name: 'one think and many more long link that will wrap'
   }, {
     id: 2,
-    name: 'two'
+    name: 'two three'
   }, {
     id: 3,
-    name: 'three'
+    name: '3'
   }, {
     id: 4,
-    name: 'two'
+    name: 'to'
   }, {
     id: 5,
-    name: 'three'
+    name: 'some random text'
   },
 ];
 
 function App() {
+  const dots = links.length > 3 ? 'breadcrumb-dots' : '';
   return (
     <>
       <Breadcrumb>
         <Breadcrumb.Item href="#" className='mr-3'>Home</Breadcrumb.Item>
         {links.map(({ id, name }, i) => (
           <Fragment key={id}>
-            <Breadcrumb.Item title={name} href="/">
+            <Breadcrumb.Item className={dots} title={name} href="/">
               {name}
             </Breadcrumb.Item>
             {(links.length - 1) > i &&

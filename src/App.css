@@ -9,7 +9,7 @@
 }
 
 .arrow {
-  padding: 0 10px;
+  padding: 0 5px;
   cursor: pointer;
   color: blue;
 }
@@ -114,4 +114,13 @@
 
 .breadcrumb-item+.breadcrumb-item::before {
   display: none;
+}
+
+.breadcrumb-dots a {
+  width: 35px;
+  display: inline-block;
+  text-overflow: ellipsis;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
 }
