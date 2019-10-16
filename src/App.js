@@ -24,6 +24,9 @@ const links = [
 ];
 
 function App() {
+  /**
+   * this will add text shrink class only if link lenth greater than 3
+   */
   const dots = links.length > 3 ? 'breadcrumb-dots' : '';
   return (
     <>
