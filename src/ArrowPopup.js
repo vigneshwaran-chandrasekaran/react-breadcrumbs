@@ -1,18 +1,24 @@
 import React, { useRef } from 'react';
 
+const CLASS_NAME = 'show';
+
 export default function ArrowPopup({ data }) {
     const arrowBox = useRef();
 
     function hideOtherPopups() {
         const elems = document.querySelectorAll(".breadcrumb-arrow .arrow-box.show");
         for (const el of elems) {
-            el.classList.remove("show");
+            el.classList.remove(CLASS_NAME);
         }
     }
 
     function handleClick() {
-        hideOtherPopups();
-        arrowBox.current.classList.add("show");
+        if (arrowBox.current.classList.contains(CLASS_NAME)) {
+            hideOtherPopups();
+        } else {
+            hideOtherPopups();
+            arrowBox.current.classList.add(CLASS_NAME);
+        }
     }
 
     return (
